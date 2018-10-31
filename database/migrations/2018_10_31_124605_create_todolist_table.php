@@ -14,9 +14,11 @@ class CreateTodolistTable extends Migration
     public function up()
     {
         Schema::create('todolist', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+
             $table->increments('id');
             $table->string('description', 50);
-            $table->tinyInteger('status', 1);
+            $table->string('status', 1);
             $table->timestamps();
         });
     }
